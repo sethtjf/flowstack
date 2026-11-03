@@ -1,6 +1,6 @@
 # code
 
-The code domain's workflow: assess epics and issues, round up everything in flight, triage, and delegate to coding agents (Claude Code cloud sessions, Devin, or a local subagent) with human review before anything lands. Building and verifying code inside a session is left to [pstack](https://github.com/cursor/plugins/tree/main/pstack). It also ships the [shared skills](../../shared) (`ambition`, `decide`, `style`) and `mcp-audit` for MCP servers you build.
+The code domain's workflow: assess epics and issues, round up everything in flight, triage, and delegate to coding agents (Claude Code cloud sessions, Devin, or a local subagent) with human review before anything lands. Building and verifying code inside a session is left to [pstack](https://github.com/cursor/plugins/tree/main/pstack). It also ships the [shared skills](../../shared) (`ambition`, `decide`, `style`) `parallelize` for sequential async calls on hot paths, and `mcp-audit` for MCP servers you build.
 
 ## Skills
 
@@ -9,6 +9,7 @@ The code domain's workflow: assess epics and issues, round up everything in flig
 | `epics` | `/code:epics` | "What epics are open?", "Finish or start next?" |
 | `roundup` | `/code:roundup` | "Review open PRs", "What's in flight?", "Plan attack on the backlog" |
 | `deliver` | `/code:deliver #N` | "Deliver #42", "Implement this here", roundup's local lane, when pstack is not in use |
+| `parallelize` | `/code:parallelize [path]` | "Fix sequential awaits on hot paths", "Find await-in-a-loop", "Cut latency from serial I/O" |
 | `mcp-audit` | `/code:mcp-audit [path]` | "Audit this MCP server", "Grade the server in `packages/mcp`" |
 | `ambition`, `decide`, `style` | `/code:<skill>` | Shared with `work`; see [shared skills](../../shared) |
 
@@ -30,6 +31,10 @@ Both detect which agent backends the session can use (Devin through its MCP serv
 | `test-runner` | Runs the repo's lint, typecheck, build, and test commands for a scope and reports pass/fail. Read-only. |
 
 Both run on `sonnet`. A repo's own `implementer` or `test-runner` in `.claude/agents/` wins; with neither, `deliver` uses a general-purpose subagent with the same contract.
+
+### parallelize
+
+**`parallelize`** maps the repo's hot paths (from traces or logs when the session can read them, else from entry points and call depth), finds independent async or blocking I/O calls that run one after another, and rewrites them to run concurrently. Each candidate must pass a nine-point safety check (data dependency, effect order, auth gates, transactions, shared state, rate limits, error semantics, context propagation, result order) before it is changed; observable behavior changes are asked about once, and the rest are reported as skipped with the failed check. Fan-outs are always bounded. Language idioms and pitfalls for TypeScript, Python, Go, Rust, Java, Kotlin, and C# are in [`skills/parallelize/references/PATTERNS.md`](skills/parallelize/references/PATTERNS.md).
 
 ### mcp-audit
 

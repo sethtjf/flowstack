@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "code",
-  "version": "0.5.0",
-  "description": "Code-domain workflow: board GitHub epics, round up PRs, issues, and agent sessions into one land-and-launch plan, deliver an item locally through implementer and test-runner subagents, and audit MCP servers. Also ships the shared skills ambition, decide, and style. Pairs with pstack for building and verifying code.",
+  "version": "0.6.0",
+  "description": "Code-domain workflow: board GitHub epics, round up PRs, issues, and agent sessions into one land-and-launch plan, deliver an item locally through implementer and test-runner subagents, parallelize sequential async calls on hot paths, and audit MCP servers. Also ships the shared skills ambition, decide, and style. Pairs with pstack for building and verifying code.",
   "author": {
     "name": "sethtjf",
     "url": "https://github.com/sethtjf"
@@ -21,6 +21,8 @@
     "pstack",
     "mcp",
     "audit",
+    "performance",
+    "async",
     "writing",
     "decisions"
   ],
@@ -28,8 +30,8 @@
     "com.openai": {
       "interface": {
         "displayName": "Code",
-        "shortDescription": "Code workflow: board GitHub epics, round up PRs, issues, and agent sessions into one land-and-launch plan, deliver an item locally, and audit MCP servers you build. Includes the shared skills ambition, decide, and style.",
-        "longDescription": "Code-domain workflow: board GitHub epics, round up PRs, issues, and agent sessions into one land-and-launch plan, deliver an item locally through implementer and test-runner subagents, and audit MCP servers. Also ships the shared skills ambition, decide, and style. Pairs with pstack for building and verifying code.",
+        "shortDescription": "Code workflow: board GitHub epics, round up PRs, issues, and agent sessions into one land-and-launch plan, deliver an item locally, parallelize sequential async calls on hot paths, and audit MCP servers you build. Includes the shared skills ambition, decide, and style.",
+        "longDescription": "Code-domain workflow: board GitHub epics, round up PRs, issues, and agent sessions into one land-and-launch plan, deliver an item locally through implementer and test-runner subagents, parallelize sequential async calls on hot paths, and audit MCP servers. Also ships the shared skills ambition, decide, and style. Pairs with pstack for building and verifying code.",
         "developerName": "sethtjf",
         "category": "Coding",
         "websiteURL": "https://github.com/sethtjf/flowstack"
