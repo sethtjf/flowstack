@@ -1,6 +1,6 @@
 # flowstack
 
-Seth's personal [Claude Code plugin marketplace](https://code.claude.com/docs/en/plugins/create-marketplace). The marketplace is named `flowstack`, so you add `sethtjf/flowstack` and install `<plugin>@flowstack`. Plugins are grouped into two domains, code and work, mirroring how Claude and ChatGPT keep code and work as separate areas of their apps. `code` and `work` are for doing tasks, and each ships the three domain-neutral [shared skills](shared) (`ambition`, `decide`, `style`), so each harness needs only its own plugin. A third plugin, `reflect`, is for improving the setup itself from session history.
+Seth's personal [Claude Code plugin marketplace](https://code.claude.com/docs/en/plugins/create-marketplace). The marketplace is named `flowstack`, so you add `sethtjf/flowstack` and install `<plugin>@flowstack`. Plugins are grouped into two domains, code and work, mirroring how Claude and ChatGPT keep code and work as separate areas of their apps. `code` and `work` are for doing tasks, and each ships the four domain-neutral [shared skills](shared) (`ambition`, `decide`, `style`, `tldr`), so each harness needs only its own plugin. A third plugin, `reflect`, is for improving the setup itself from session history.
 
 ## Install
 
@@ -26,7 +26,7 @@ On Claude Code 2.1.275 or later, one command inside a session does both:
 | :- | :- | :- | :- |
 | code | [`code`](plugins/code) | Board epics, round up PRs, issues, and agent sessions into one land-and-launch plan, deliver an item locally, parallelize sequential async calls on hot paths, and audit MCP servers you build. Pairs with [pstack](https://github.com/cursor/plugins/tree/main/pstack) for building and verifying code. | `/code:epics`, `/code:roundup`, `/code:deliver`, `/code:parallelize`, `/code:mcp-audit` |
 | work | [`work`](plugins/work) | Set up a task tool of your choice, turn Slack, email, calendar, and meeting notes into action items, delegate them to cloud sessions or a local worker, and sign off on every outward send. | `/work:setup`, `/work:intake`, `/work:roundup`, `/work:projects`, `/work:deliver`, `/work:review` |
-| both | [shared skills](shared) | Frame a task, settle open questions with a recommended option, and write in Seth's style. Shipped in `code` and `work` from one source in `shared/skills/`. | `/code:ambition` or `/work:ambition`, and likewise `decide`, `style` |
+| both | [shared skills](shared) | Frame a task, settle open questions with a recommended option, write in Seth's style, and get a TLDR recap or why-it-matters refresher. Shipped in `code` and `work` from one source in `shared/skills/`. | `/code:ambition` or `/work:ambition`, and likewise `decide`, `style`, `tldr` |
 | reflect | [`reflect`](plugins/reflect) | Review past chats and sessions, find patterns, and interview you until you can name what to change in your setup. | `/reflect:introspect` |
 
 Plugin skills run as `/<plugin-name>:<skill-name>`.

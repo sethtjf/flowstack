@@ -1,7 +1,7 @@
 {
   "name": "work",
-  "version": "0.2.0",
-  "description": "Knowledge-work mirror of the code workflow: set up a task tool of your choice, turn Slack, email, calendar, and meeting notes into action items, round them up into a land-and-launch plan, delegate to cloud sessions or a local worker, and sign off on every outward send in one review queue. Also ships the shared skills ambition, decide, and style.",
+  "version": "0.3.0",
+  "description": "Knowledge-work mirror of the code workflow: set up a task tool of your choice, turn Slack, email, calendar, and meeting notes into action items, round them up into a land-and-launch plan, delegate to cloud sessions or a local worker, and sign off on every outward send in one review queue. Also ships the shared skills ambition, decide, style, and tldr.",
   "author": {
     "name": "sethtjf",
     "url": "https://github.com/sethtjf"
@@ -14,7 +14,8 @@
     "email",
     "calendar",
     "delegation",
-    "review"
+    "review",
+    "summary"
   ],
   "homepage": "https://github.com/sethtjf/flowstack",
   "repository": "https://github.com/sethtjf/flowstack"

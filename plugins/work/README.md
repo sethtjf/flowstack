@@ -26,7 +26,7 @@ The loop: `intake` writes action items to the ledger. `roundup` sorts them into 
 
 Run `/work:setup` once. It finds every connected tool that can hold tasks and projects (GitHub issues, Google Sheets, a Slack list, a Markdown file, or any other connected tracker), checks each with one read, and asks you to pick one and confirm how its statuses map. It then detects your sources (Slack, Gmail, Google Calendar, Granola, Google Drive) and agent backends and writes everything to `WORK.md` (default `~/.claude/WORK.md`). The other skills read the ledger from there and send you back to `setup` if it is missing. The adapter table and item, status, and packet formats are in `skills/*/references/LEDGER.md`.
 
-The plugin also ships the [shared skills](../../shared) (`ambition`, `decide`, `style`) as `/work:<skill>`.
+The plugin also ships the [shared skills](../../shared) (`ambition`, `decide`, `style`, `tldr`) as `/work:<skill>`.
 
 ## Install
 
