@@ -1,7 +1,7 @@
 {
   "name": "code",
-  "version": "0.6.0",
-  "description": "Code-domain workflow: board GitHub epics, round up PRs, issues, and agent sessions into one land-and-launch plan, deliver an item locally through implementer and test-runner subagents, parallelize sequential async calls on hot paths, and audit MCP servers. Also ships the shared skills ambition, decide, and style. Pairs with pstack for building and verifying code.",
+  "version": "0.7.0",
+  "description": "Code-domain workflow: board GitHub epics, round up PRs, issues, and agent sessions into one land-and-launch plan, deliver an item locally through implementer and test-runner subagents, parallelize sequential async calls on hot paths, and audit MCP servers. Also ships the shared skills ambition, decide, style, and tldr. Pairs with pstack for building and verifying code.",
   "author": {
     "name": "sethtjf",
     "url": "https://github.com/sethtjf"
@@ -21,7 +21,8 @@
     "performance",
     "async",
     "writing",
-    "decisions"
+    "decisions",
+    "summary"
   ],
   "homepage": "https://github.com/sethtjf/flowstack",
   "repository": "https://github.com/sethtjf/flowstack"
