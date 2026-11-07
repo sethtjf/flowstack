@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "work",
-  "version": "0.3.0",
-  "description": "Knowledge-work mirror of the code workflow: set up a task tool of your choice, turn Slack, email, calendar, and meeting notes into action items, round them up into a land-and-launch plan, delegate to cloud sessions or a local worker, and sign off on every outward send in one review queue. Also ships the shared skills ambition, decide, style, and tldr.",
+  "version": "0.4.0",
+  "description": "Knowledge-work mirror of the code workflow: set up a task tool of your choice, turn Slack, email, calendar, and meeting notes into action items, round them up into a land-and-launch plan, delegate to cloud sessions or a local worker, and sign off on every outward send in one review queue. Also ships the shared skills ambition, decide, style, tldr, and write (website copy, decks, and narrative).",
   "author": {
     "name": "sethtjf",
     "url": "https://github.com/sethtjf"
@@ -18,14 +18,18 @@
     "calendar",
     "delegation",
     "review",
-    "summary"
+    "summary",
+    "writing",
+    "copywriting",
+    "presentations",
+    "editing"
   ],
   "extensions": {
     "com.openai": {
       "interface": {
         "displayName": "Work",
-        "shortDescription": "Work workflow: turn Slack, email, calendar, and meeting notes into action items, delegate them to cloud sessions or a local worker, and sign off on every outward send. Includes the shared skills ambition, decide, style, and tldr.",
-        "longDescription": "Knowledge-work mirror of the code workflow: set up a task tool of your choice, turn Slack, email, calendar, and meeting notes into action items, round them up into a land-and-launch plan, delegate to cloud sessions or a local worker, and sign off on every outward send in one review queue. Also ships the shared skills ambition, decide, style, and tldr.",
+        "shortDescription": "Work workflow: turn Slack, email, calendar, and meeting notes into action items, delegate them to cloud sessions or a local worker, and sign off on every outward send. Includes the shared skills ambition, decide, style, tldr, and write.",
+        "longDescription": "Knowledge-work mirror of the code workflow: set up a task tool of your choice, turn Slack, email, calendar, and meeting notes into action items, round them up into a land-and-launch plan, delegate to cloud sessions or a local worker, and sign off on every outward send in one review queue. Also ships the shared skills ambition, decide, style, tldr, and write (website copy, decks, and narrative).",
         "developerName": "sethtjf",
         "category": "Productivity",
         "websiteURL": "https://github.com/sethtjf/flowstack"

@@ -50,7 +50,7 @@ Each plugin lives in `plugins/<name>/` and has one entry in `.claude-plugin/mark
 
 ## Update a shared skill
 
-`ambition`, `decide`, `style`, and `tldr` ship in both `code` and `work`. Edit them only in `shared/skills/<skill>/`, then copy them into both plugins and bump both versions:
+`ambition`, `decide`, `style`, `tldr`, and `write` ship in both `code` and `work`. Edit them only in `shared/skills/<skill>/`, then copy them into both plugins and bump both versions:
 
 ```bash
 scripts/sync-shared.sh
