@@ -1,7 +1,7 @@
 {
   "name": "code",
-  "version": "0.8.0",
-  "description": "Code-domain workflow: board GitHub epics, round up PRs, issues, and agent sessions into one land-and-launch plan, deliver an item locally through implementer and test-runner subagents, parallelize sequential async calls on hot paths, and audit MCP servers. Also ships the shared skills ambition, decide, style, tldr, and write (website copy, decks, and narrative). Pairs with pstack for building and verifying code.",
+  "version": "0.9.0",
+  "description": "Code-domain workflow: board GitHub epics, round up PRs, issues, and agent sessions into one land-and-launch plan, deliver an item locally through implementer and test-runner subagents, parallelize sequential async calls on hot paths, reframe a problem or design before building it, and audit MCP servers. Also ships the shared skills ambition, decide, style, tldr, and write (website copy, decks, and narrative). Pairs with pstack for building and verifying code.",
   "author": {
     "name": "sethtjf",
     "url": "https://github.com/sethtjf"
@@ -23,6 +23,8 @@
     "writing",
     "decisions",
     "summary",
+    "design",
+    "architecture",
     "copywriting",
     "presentations",
     "editing"

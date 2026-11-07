@@ -10,13 +10,13 @@
       "name": "code",
       "source": "./plugins/code",
       "category": "code",
-      "description": "Code workflow: board GitHub epics, round up PRs, issues, and agent sessions into one land-and-launch plan, deliver an item locally, parallelize sequential async calls on hot paths, and audit MCP servers you build. Includes the shared skills ambition, decide, style, tldr, and write."
+      "description": "Code workflow: board GitHub epics, round up PRs, issues, and agent sessions into one land-and-launch plan, deliver an item locally, parallelize sequential async calls on hot paths, reframe a problem or design before building it, and audit MCP servers you build. Includes the shared skills ambition, decide, style, tldr, and write."
     },
     {
       "name": "work",
       "source": "./plugins/work",
       "category": "work",
-      "description": "Work workflow: turn Slack, email, calendar, and meeting notes into action items, delegate them to cloud sessions or a local worker, and sign off on every outward send. Includes the shared skills ambition, decide, style, tldr, and write."
+      "description": "Work workflow: turn Slack, email, calendar, and meeting notes into action items, delegate them to cloud sessions or a local worker, and sign off on every outward send. Includes the shared skills ambition, decide, style, and tldr."
     },
     {
       "name": "reflect",

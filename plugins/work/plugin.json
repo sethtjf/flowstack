@@ -28,7 +28,7 @@
     "com.openai": {
       "interface": {
         "displayName": "Work",
-        "shortDescription": "Work workflow: turn Slack, email, calendar, and meeting notes into action items, delegate them to cloud sessions or a local worker, and sign off on every outward send. Includes the shared skills ambition, decide, style, tldr, and write.",
+        "shortDescription": "Work workflow: turn Slack, email, calendar, and meeting notes into action items, delegate them to cloud sessions or a local worker, and sign off on every outward send. Includes the shared skills ambition, decide, style, and tldr.",
         "longDescription": "Knowledge-work mirror of the code workflow: set up a task tool of your choice, turn Slack, email, calendar, and meeting notes into action items, round them up into a land-and-launch plan, delegate to cloud sessions or a local worker, and sign off on every outward send in one review queue. Also ships the shared skills ambition, decide, style, tldr, and write (website copy, decks, and narrative).",
         "developerName": "sethtjf",
         "category": "Productivity",
