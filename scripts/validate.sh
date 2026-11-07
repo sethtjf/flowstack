@@ -12,6 +12,8 @@
 #    plugins/<name>/plugin.json must match what scripts/build-openai.py
 #    generates, and each plugin.json must fit the portable Agent Plugins
 #    schema's top-level rules.
+# 6. Skill script tests: shared/skills/write/scripts/test_lint.py (fake
+#    linters, so it needs only python3).
 #
 # Exits non-zero if any step fails. If the `claude` CLI is not installed,
 # steps 1 and 2 are skipped with a warning and step 3 still runs.
@@ -283,6 +285,16 @@ if errors:
     sys.exit(1)
 print("OpenAI manifests pass schema checks")
 PY
+
+# --- 6: skill script tests ---------------------------------------------------
+echo
+echo "==> skill script tests"
+if out="$(python3 -I shared/skills/write/scripts/test_lint.py 2>&1)"; then
+  echo "$out" | tail -n 1
+else
+  echo "$out" >&2
+  fail "shared/skills/write/scripts/test_lint.py failed"
+fi
 
 echo
 if [ "$failed" -ne 0 ]; then

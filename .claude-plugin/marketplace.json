@@ -10,7 +10,7 @@
       "name": "code",
       "source": "./plugins/code",
       "category": "code",
-      "description": "Code workflow: board GitHub epics, round up PRs, issues, and agent sessions into one land-and-launch plan, deliver an item locally, parallelize sequential async calls on hot paths, reframe a problem or design before building it, and audit MCP servers you build. Includes the shared skills ambition, decide, style, and tldr."
+      "description": "Code workflow: board GitHub epics, round up PRs, issues, and agent sessions into one land-and-launch plan, deliver an item locally, parallelize sequential async calls on hot paths, reframe a problem or design before building it, and audit MCP servers you build. Includes the shared skills ambition, decide, style, tldr, and write."
     },
     {
       "name": "work",

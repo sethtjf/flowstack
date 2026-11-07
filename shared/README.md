@@ -1,6 +1,6 @@
 # Shared skills
 
-These four skills are domain-neutral, so both the [`code`](../plugins/code) and [`work`](../plugins/work) plugins ship them. This folder is the only copy to edit. After an edit, run `scripts/sync-shared.sh` to copy each skill into both plugins; `scripts/validate.sh` fails if a plugin's copy differs from the source here.
+These five skills are domain-neutral, so both the [`code`](../plugins/code) and [`work`](../plugins/work) plugins ship them. This folder is the only copy to edit. After an edit, run `scripts/sync-shared.sh` to copy each skill into both plugins; `scripts/validate.sh` fails if a plugin's copy differs from the source here.
 
 | Skill | In code | In work | Use when |
 | :- | :- | :- | :- |
@@ -8,6 +8,7 @@ These four skills are domain-neutral, so both the [`code`](../plugins/code) and 
 | `decide` | `/code:decide` | `/work:decide` | "Clear the open questions" in a spec, plan, or PR |
 | `style` | `/code:style` | `/work:style` | Writing or reviewing prose in Seth's style |
 | `tldr` | `/code:tldr` | `/work:tldr` | "TLDR", "Catch me up", "Zoom out", "Remind me why this matters" |
+| `write` | `/code:write [copy\|deck\|narrative]` | `/work:write [copy\|deck\|narrative]` | Website copy, a deck or its titles and notes, a memo or essay, or a narrow edit to any of them |
 
 With both plugins installed, each skill appears twice, once per namespace. The copies are identical, so either command does the same thing.
 
@@ -20,6 +21,8 @@ With both plugins installed, each skill appears twice, once per namespace. The c
 ### Write
 
 **`style`** holds Seth's 30 writing rules (response format, punctuation, voice, structure, precision, code, pushback) and a draft-review procedure that lists each change by rule number. The same rules run as an always-on claude.ai personal preference; the skill is for agents that load skills. Rule 15 names the reader's field (legal technology). Rule numbers are referenced by the review procedure, so renumber both together. Where pstack's `unslop` or `technical-writing` conflict with it, `style` wins.
+
+**`write`** composes and edits substantive writing in three modes: `copy` (web pages, headlines, CTAs), `deck` (storyline, assertion titles, evidence, speaker notes), and `narrative` (memos, essays, reports). It picks the mode from the first argument or the request, and separates a new draft, a substantial revision, and a narrow edit, so a headline edit stays a headline edit. It reads product context, brand guidance, sources, and voice samples before asking anything, never invents statistics, testimonials, customers, or results (gaps are marked `[NEED: ...]`), and runs a fact check that every supported fact, distinction, and hedge survived the edit. Drafting never publishes, sends, shares, or deploys. `style` stays authoritative for sentence-level rules and Seth's voice; `write` supplies composition and editing method and does not restate them, and text in a brand's or author's voice follows their guide. An optional `scripts/lint.py` runs a locally installed SlopSift or Vale, never downloads anything, lints `.pptx` slide copy and speaker notes separately, and normalizes findings to file, location, tool, rule, severity, and message with the original diagnostic kept. Methods are adapted from Corey Haines, Dreambase, Softaworks, Blader's Humanizer, SlopSift, and Vale, all MIT. Pinned revisions and attribution are in `write/references/UPSTREAM.md`. A change to `style` rules 4, 6, 13, 20, or 25 may need a matching change in `write`.
 
 ### Summarize
 

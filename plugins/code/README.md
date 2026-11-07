@@ -1,6 +1,6 @@
 # code
 
-The code domain's workflow: assess epics and issues, round up everything in flight, triage, and delegate to coding agents (Claude Code cloud sessions, Devin, or a local subagent) with human review before anything lands. Building and verifying code inside a session is left to [pstack](https://github.com/cursor/plugins/tree/main/pstack). It also ships the [shared skills](../../shared) (`ambition`, `decide`, `style`, `tldr`), `parallelize` for sequential async calls on hot paths, `reframe` for questioning a problem or design before building it, and `mcp-audit` for MCP servers you build.
+The code domain's workflow: assess epics and issues, round up everything in flight, triage, and delegate to coding agents (Claude Code cloud sessions, Devin, or a local subagent) with human review before anything lands. Building and verifying code inside a session is left to [pstack](https://github.com/cursor/plugins/tree/main/pstack). It also ships the [shared skills](../../shared) (`ambition`, `decide`, `style`, `tldr`, `write`), `parallelize` for sequential async calls on hot paths, `reframe` for questioning a problem or design before building it, and `mcp-audit` for MCP servers you build.
 
 ## Skills
 
@@ -12,7 +12,7 @@ The code domain's workflow: assess epics and issues, round up everything in flig
 | `parallelize` | `/code:parallelize [path]` | "Fix sequential awaits on hot paths", "Find await-in-a-loop", "Cut latency from serial I/O" |
 | `reframe` | `/code:reframe [lens]` | "Think abstractly about this", "Reduce to constraints and rebuild from zero", "What would a principal architect rewrite?", "What test breaks this design?", "What abstraction makes this disappear?" |
 | `mcp-audit` | `/code:mcp-audit [path]` | "Audit this MCP server", "Grade the server in `packages/mcp`" |
-| `ambition`, `decide`, `style`, `tldr` | `/code:<skill>` | Shared with `work`; see [shared skills](../../shared) |
+| `ambition`, `decide`, `style`, `tldr`, `write` | `/code:<skill>` | Shared with `work`; see [shared skills](../../shared) |
 
 ### roundup and epics
 
