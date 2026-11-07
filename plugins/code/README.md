@@ -1,6 +1,6 @@
 # code
 
-The code domain's workflow: assess epics and issues, round up everything in flight, triage, and delegate to coding agents (Claude Code cloud sessions, Devin, or a local subagent) with human review before anything lands. Building and verifying code inside a session is left to [pstack](https://github.com/cursor/plugins/tree/main/pstack). It also ships the [shared skills](../../shared) (`ambition`, `decide`, `style`, `tldr`), `parallelize` for sequential async calls on hot paths, and `mcp-audit` for MCP servers you build.
+The code domain's workflow: assess epics and issues, round up everything in flight, triage, and delegate to coding agents (Claude Code cloud sessions, Devin, or a local subagent) with human review before anything lands. Building and verifying code inside a session is left to [pstack](https://github.com/cursor/plugins/tree/main/pstack). It also ships the [shared skills](../../shared) (`ambition`, `decide`, `style`, `tldr`), `parallelize` for sequential async calls on hot paths, `reframe` for questioning a problem or design before building it, and `mcp-audit` for MCP servers you build.
 
 ## Skills
 
@@ -10,6 +10,7 @@ The code domain's workflow: assess epics and issues, round up everything in flig
 | `roundup` | `/code:roundup` | "Review open PRs", "What's in flight?", "Plan attack on the backlog" |
 | `deliver` | `/code:deliver #N` | "Deliver #42", "Implement this here", roundup's local lane, when pstack is not in use |
 | `parallelize` | `/code:parallelize [path]` | "Fix sequential awaits on hot paths", "Find await-in-a-loop", "Cut latency from serial I/O" |
+| `reframe` | `/code:reframe [lens]` | "Think abstractly about this", "Reduce to constraints and rebuild from zero", "What would a principal architect rewrite?", "What test breaks this design?", "What abstraction makes this disappear?" |
 | `mcp-audit` | `/code:mcp-audit [path]` | "Audit this MCP server", "Grade the server in `packages/mcp`" |
 | `ambition`, `decide`, `style`, `tldr` | `/code:<skill>` | Shared with `work`; see [shared skills](../../shared) |
 
@@ -35,6 +36,10 @@ Both run on `sonnet`. A repo's own `implementer` or `test-runner` in `.claude/ag
 ### parallelize
 
 **`parallelize`** maps the repo's hot paths (from traces or logs when the session can read them, else from entry points and call depth), finds independent async or blocking I/O calls that run one after another, and rewrites them to run concurrently. Each candidate must pass a nine-point safety check (data dependency, effect order, auth gates, transactions, shared state, rate limits, error semantics, context propagation, result order) before it is changed; observable behavior changes are asked about once, and the rest are reported as skipped with the failed check. Fan-outs are always bounded. Language idioms and pitfalls for TypeScript, Python, Go, Rust, Java, Kotlin, and C# are in [`skills/parallelize/references/PATTERNS.md`](skills/parallelize/references/PATTERNS.md).
+
+### reframe
+
+**`reframe`** questions the shape of a task before any code is written, through five lenses: `abstract` names the general problem class and its known solutions, `zero` splits constraints into hard (with a source) and soft and rebuilds from the hard ones, `architect` ranks up to five structural changes to make before line one, `break` writes one runnable test most likely to fail on day one, and `dissolve` looks for an existing tool, generalization, inversion, or deletion that removes the task. Name a lens to run only that one; with none it runs all five in order and returns one recommended reframing, what it gives up, and a choice between it and the original plan. It reads the code first, and keeping the original plan is a valid result. Where `ambition` changes the size of the ask, `reframe` changes the shape of the solution. The lenses come from five prompts posted by @Wyrmfalls on X (6 Nov 2026).
 
 ### mcp-audit
 
